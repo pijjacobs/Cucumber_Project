@@ -60,7 +60,7 @@ public class MCF_Locators {
 	public static final String message_center_error = "//*[@id=\"error_status\"]";
 	
 	//locators for the-internet.herokuapp.com
-	public static final String nested_frames = "//*[@id=\\\"content\\\"]/ul/li[34]/a";
+	public static final String nested_frames = "//*[@id=\"content\"]/ul/li[34]/a";
 	public static final String notification_message = "//*[@id=\"content\"]/ul/li[35]/a";
 	public static final String click_here = "//*[@id=\"content\"]/div/p/a";
 	public static final String alertmessage_unsuccess = "//*[@id=\"flash\"]";
@@ -76,6 +76,8 @@ public class MCF_Locators {
 	public static final String code_404_back = "//*[@id=\"content\"]/div/p/a";
 	public static final String code_500 = "//*[@id=\"content\"]/div/ul/li[4]/a";
 	public static final String code_500_back = "//*[@id=\"content\"]/div/p/a";
+	
+	public static final String shadow_DOM = "//*[@id=\"content\"]/ul/li[38]/a";
 	
 	
 	

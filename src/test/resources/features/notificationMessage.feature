@@ -1,10 +1,7 @@
-@tag
+ @tag
 Feature: Title of your feature
   I want to use this template for my feature file
-
-  @nested
-  Scenario: To Automate the Nested Frame
+ @tag2
+  Scenario: To Automate the Notification Message
   Given Open Browser and open URL
-  When Switch between Frames
- 
- 
+  When notification message handling

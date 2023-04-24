@@ -1,22 +1,28 @@
 package stepdefinitions;
 
+import org.asynchttpclient.util.Assertions;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 
 import factory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import locators.MCF_Locators;
 
 public class StepsForNestedFrames {
 
-	WebDriver driver;
+	public WebDriver driver;
 
 	@Given("Open Browser and open URL")
 	public void open_browser_and_open_url() {
-		driver = DriverFactory.getDriver();
+		driver=DriverFactory.getDriver();
 		driver.get("http://the-internet.herokuapp.com/?ref=hackernoon.com");
 
 	}
@@ -31,14 +37,6 @@ public class StepsForNestedFrames {
 		WebElement rightFrame = driver.findElement(By.tagName("body"));
 		String rightFrameText = rightFrame.getText();
 		System.out.println(rightFrameText);
-	}
-
-	@Given("Open Browser enter URl and click notification messages")
-	public void open_browser_enter_u_rl_and_click_notification_messages() {
-
-		driver = DriverFactory.getDriver();
-		driver.get("http://the-internet.herokuapp.com/?ref=hackernoon.com");
-
 	}
 
 	@When("notification message handling")
@@ -85,6 +83,16 @@ public class StepsForNestedFrames {
 		String title = driver.getTitle();
 		System.out.println(title);
 
+	}
+	@When("finding shadow DOM text")
+	public void finding_shadow_dom_text(String String) {
+	    
+		driver.findElement(By.xpath(MCF_Locators.shadow_DOM)).click();
+		WebElement shadowHost = driver.findElement(By.cssSelector("#shadow_host"));
+//		SearchContext shadowRoot = shadowHost.getShadowRoot();
+//		WebElement shadowContent = shadowRoot.findElement(By.cssSelector("#shadow_content"));
+//		Assertions.assertEquals("some text", shadowContent.getText());
+		
 	}
 
 }

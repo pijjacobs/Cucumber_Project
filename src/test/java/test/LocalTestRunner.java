@@ -17,10 +17,10 @@ rerunFailedScenarios = false,
 showTestOutput = true, 
 reportTitle = " Automation Report", 
 reportTargetDir = "target", 
-cucumberOptions = @CucumberOptions(features = "./src/main/resources/features", 
+cucumberOptions = @CucumberOptions(features = "./src/test/resources/features", 
 glue = ".",
 tags = {
-		"@tag3" },
+		"@nested" },
 
 		plugin = { "pretty", "json:target/cucumber-report/results.json", "html:target/cucumber-report/cucumber.html",
 				"junit:target/cucumber-report/cucumber.xml" }))
